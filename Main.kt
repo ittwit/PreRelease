@@ -117,7 +117,8 @@ fun main(vararg args: String) {
     println()
 
     // Loops every available component
-    // Filters all ordered component on if they have the same name as the looped component
-    // Sums up the total bought (maxStock - stock) for those filtered components
-    optionOptions.forEach {options -> options.forEach { component: Component ->  orders.forEach { order -> println("${component.name}: ${order.components.filter { orderComponent -> orderComponent.name == component.name}.sumBy { it.maxStock - it.stock }}")} }}
+    // Sums up the total bought (maxStock - stock) for those components
+
+    optionOptions.forEach { options -> options.forEach { component: Component -> println("${component.name}:  ${component.maxStock - component.stock}")} }
+
 }
